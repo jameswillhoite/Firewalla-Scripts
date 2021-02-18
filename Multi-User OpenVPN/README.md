@@ -1,5 +1,5 @@
-# Firewalla-Scripts
-Some Custom scripts I've made for my Firewalla Gold
+# Multi-User OpenVPN
+A small script to help adding and changeng the password of the new User for the Firewalla Gold
 
 # Setup
 1) Open the "base.conf" file and adjust the "remote" ip/url to point to your Firewalla Static Url
