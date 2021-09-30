@@ -26,5 +26,21 @@ If you would like some more information [HERE](https://www.digitalocean.com/comm
 
 Also you can visit [StrongSwan.org](https://wiki.strongswan.org/projects/strongswan) to look at more examples of config files and more information about L2TP and IKEv2.
 
-***Please be aware, if you are connecting to a VPN provider then your entire network will be linked to that provider. There is no User Interface like FireWalla's OpenVPN and Wireguard to use***
+***Please be aware, if you are connecting to a VPN provider then your entire network will be linked to that provider. There is no User Interface like FireWalla's OpenVPN and Wireguard to use.***
+
 **You must add blocking rules to disallow other networks to access the subnets**
+
+**FireWalla will always block connections coming in, but there is no FireWalla UI to view with this setup. FireWalla will not show network flows on this VPN connection, in fact, all of FireWalla's UI will not show this network up.**
+
+Some commands that are useful
+
+`sudo ipsec statusall` will show all connection statuses
+
+`sudo ipsec status <connection>` will show the status of a single connection named <connection>
+ 
+`sudo systemctl <restart|stop|start> strongswan` will restart|stop|start StrongSwan. 
+ 
+`sudo ipsec rereadall` will reload all configurations (same as issueing `sudo systemctl restart strongswan`)
+ 
+`sudo ipsec <up|down> <connection>` will bring a connection up or down 
+ 
